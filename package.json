@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-file-upload",
+  "version": "1.0.0",
+  "description": "This is a simple file upload example with NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Edy Segura",
+  "license": "MIT"
+}
