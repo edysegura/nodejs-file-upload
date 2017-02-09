@@ -9,24 +9,13 @@ function start(route, handler) {
     http
         .createServer(onRequest)
         .listen(port, onStart)
-    
+
     function onRequest(request, response) {
         console.log("Request for: " + request.url)
         console.log("HTTP Method: " + request.method)
-        
+
         let pathname = url.parse(request.url).pathname
-        let chunkData = []
-        
-        request.on('data', function onData(chunk) {
-            //console.log("chunk: " + chunk)
-            chunkData.push(chunk)
-        })
-        
-        request.on('end', function onEnd() {
-            let postData = chunkData.join("")
-            route(pathname, handler, response, postData)
-        })
-        
+        route(pathname, handler, request, response)
     }
 }
 

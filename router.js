@@ -1,9 +1,9 @@
 "use strict"
 
-function route(pathname, handler, response, postData) {
+function route(pathname, handler, request, response) {
     if (typeof handler[pathname] === "function") {
         console.log("Route to " + pathname)
-        return handler[pathname](response, postData)
+        return handler[pathname](request, response)
     }
     else {
         console.log("No request handler found for " + pathname)

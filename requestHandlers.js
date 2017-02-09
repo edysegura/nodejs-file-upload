@@ -1,16 +1,23 @@
 "use strict"
 
 const fs = require('fs')
-const queryString = require('querystring')
+const formidable = require('formidable')
+const util = require('util')
 
-function start(response) {
-    console.log('Request handler "Login" was called')
+function start(request, response) {
+    console.log('Request handler start was called')
     let fileName = "./index.html"
     responseHTML(response, fileName)
 }
 
-function upload(response, postData) {
-    console.log('Request handler "Auth" was called')
+function upload(request, response) {
+    console.log('Request handler upload was called')
+
+    var form = new formidable.IncomingForm();
+    form.parse(request, function(err, fields, files) {
+      console.log(util.inspect({fields: fields, files: files}));
+    });
+
     let fileName = "./show.html"
     responseHTML(response, fileName)
 }
