@@ -3,6 +3,10 @@
 This is a simple file upload example with NodeJS. To start that just execute the command below:
 
 ```
+npm install
+```
+then
+```
 npm start
 ```
 
