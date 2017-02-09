@@ -5,7 +5,6 @@ const queryString = require('querystring')
 
 function start(response) {
     console.log('Request handler "Login" was called')
-    
     let fileName = "./index.html"
     responseHTML(response, fileName)
 }
